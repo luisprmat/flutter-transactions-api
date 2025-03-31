@@ -17,6 +17,6 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (NotFoundHttpException $e) {
-            return response()->json(['message' => 'Resource you are looking for was not found.'], 404);
+            return response()->json(['message' => __('Resource you are looking for was not found.')], 404);
         });
     })->create();

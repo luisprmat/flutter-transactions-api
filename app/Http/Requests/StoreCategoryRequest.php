@@ -27,4 +27,16 @@ class StoreCategoryRequest extends FormRequest
             'name' => ['required', Rule::unique('categories')],
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'user_id.exists' => __('This user doesn\'t exist in our system.'),
+        ];
+    }
 }

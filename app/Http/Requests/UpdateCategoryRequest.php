@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests;
 
-use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateCategoryRequest extends FormRequest
 {
@@ -25,6 +25,18 @@ class UpdateCategoryRequest extends FormRequest
         return [
             'user_id' => ['nullable', 'integer', Rule::exists('users', 'id')],
             'name' => ['required', Rule::unique('categories')->ignore($this->route('category'))],
+        ];
+    }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array<string, string>
+     */
+    public function messages(): array
+    {
+        return [
+            'user_id.exists' => __('This user doesn\'t exist in our system.'),
         ];
     }
 }
