@@ -184,6 +184,7 @@ return [
         'day' => 'día',
         'deleted_at' => 'eliminado el',
         'description' => 'descripción',
+        'device_name' => 'nombre del dispositivo',
         'display_type' => 'tipo de visualización',
         'district' => 'distrito',
         'duration' => 'duración',
